@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lập trình WEB</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/anh1.png">
+    <link rel="stylesheet" href="/assets/css/style-ltw.css">
+    <script src="jsltw.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <img src="/assets/img/khoadientuhaui.jpg" alt="Khoa Điện Tử" class="img-header">
+            <!-- begin nav -->
+            <ul id="nav">
+                <li><a href="#">
+                    <i class="nav-home ti-home"></i>
+                    Trang chủ                    
+                </a></li>
+               
+                <li>
+                    <a href="">
+                        Tài liệu
+                        <i class="nav-down ti-angle-down"></i>                        
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="./assets/laptrinhweb/calculator.html">Máy tính cầm tay </a></li>
+                        <li><a href="./assets/laptrinhweb/dongho.html">Đồng hồ kim </a></li>
+                                              
+                
+                    </ul>                
+                
+                </li>
+                
+            </ul>
+            <!-- end nav -->
+            <!-- begin search  -->
+            
+            <!-- end search  -->
+        </div>
+        
+        
+        </div>
+
+         <!-- begin slider -->
+         <div id="slider">          
+            <div class="container">
+                <div class="gallery-display-area">
+                    <div class="gallery-wrap">
+                        <div class="image-slider">
+                            <img src="/assets/img/img11.jpg"/>                            
+                        </div>
+                        <div class="image-slider">
+                            <img src="/assets/img/img22.jpg"/>                            
+                        </div>
+                        <div class="image-slider">
+                            <img src="/assets/img/img33.jpg"/>                            
+                        </div>                            
+                    </div>
+                </div>  
+            </div>
+          </div>
+    <!-- end slider -->
+    
+    <br>
+    <div id="content">  
+        <div class="bai1">
+            <form name="frm1"> <par>Chọn màu của nền </par>
+                <input  type="button" value="Sáng"
+                onclick="window.document.bgColor = 'white'; " />
+                <input type="button" value="Tối"
+                onclick="window.document.bgColor = 'black'; " />                
+                </form>
+        </div>        
+        <div class="bai2">
+            <form name="frm2">
+            <h3>Tính tiền                
+            </h3>
+            <h4>Bạn hãy nhập vào số lượng và giá:</h4>
+            Số lượng: <input name="SoLuong">
+            Đơn giá:<input name="DonGia" onKeyUp="ThanhTien.value=SoLuong.value*DonGia.value">
+            Thành tiền:<input name="ThanhTien"> VNĐ <br></form>
+        </div>
+        <div class="bai3">
+            <form name="frm">
+                <h2>Nhập kí tự:</h2> <input type="text" name="SoKyTu"> <BR>
+                <textarea name="NoiDung" cols="50" rows="10"
+                onKeyUp="KiemTra();"> </textarea></form>
+        </div>
+        <div class="bai4">
+            <input type="text" id="number" value="0">
+            <button onclick="start()">Start</button>
+            <button onclick="stop()">Stop</button>
+            <script>
+                var clear ;
+                var getValue = function (){
+                    var number = document.getElementById('number').value;
+                    number++;
+                    if(number==1000){
+                        number = 0
+                    }
+                    document.getElementById('number').value = number;
+                }
+                function start(){
+                   clear = setInterval(getValue , 100)
+                }
+                function stop(){
+                    clearInterval(clear);
+                    var score = document.getElementById('number').value;
+                    alert("Bạn đang dừng tại: "+score);
+                    document.getElementById('number').value = 0;
+
+                }
+
+            </script>
+        </div>
+
+       
+    </div>
+
+
+
+       
+  
+
+    <div id="footer">
+            
+        <div class="footer-section">
+            <div class="footer-text">
+                <h4>Trụ sở chính</h4> <br>
+                <h5>Số 298 đường Cầu Diễn, quận Bắc Từ Liêm, Hà Nội</h5> <br>
+                <h5>+84 243 765 5121</h5> <br>
+                <h5>Email: dhcnhn@haui.edu.vn</h5> <br>
+                <h4>Các cơ sở khác</h4> <br>
+                <h5>Cơ sở 2: Phường Tây Tựu, quận Bắc Từ Liêm, Hà Nội</h5> <br>
+                <h5>Cơ sở 3: Phường Lê Hồng Phong, thành phố Phủ Lý, Hà Nam</h5> <br>
+            </div>
+            <div class="footer-text">
+                <h4>Liên kết site</h4> <br>
+                <h5>Trường Đại học Công nghiệp Hà Nội</h5> <br>
+                <h5>Thông tin tuyển sinh</h5> <br>
+                <h5>Hành chính điện tử</h5> <br>
+                <h5> Đào tạo trực tuyến</h5> <br>
+                <h5>Cổng thông tin đào tạo</h5> <br>
+            </div>
+        </div>
+   
+
+</div>
+
+        
+</body>
+</html>

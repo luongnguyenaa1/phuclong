@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="CheckLogin()">
+    <input type="text"  id="username">
+    <input type="password" id="password">
+    <button onclick="Login()" >login</button>
+    <script>
+         const listAccount = [
+                {
+                    username: "",
+                    password: ""
+                },
+                {
+                    username: "",
+                    password: ""
+                }
+            ]
+
+            let isLogin = !!localStorage.getItem("token")
+            function CheckLogin(){
+                if(isLogin)
+                {
+                    window.location.href = "index.html"
+                }
+
+            }
+            function Login(){
+                let username = document.getElementById("username").value 
+                let password = document.getElementById("password").value 
+                let checkLogin = listAccount.some(value => value.username === username && value.password === password)
+                if(checkLogin){
+                    localStorage.setItem("token",username)
+                    isLogin = true
+                    CheckLogin()
+                }else {("Tên đăng nhập hoặc mật khẩu không chính xác")}
+            }
+    </script>
+</body>
+</html>
